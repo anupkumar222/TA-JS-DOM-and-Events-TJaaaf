@@ -1,5 +1,4 @@
 function todo() {
-
 let inputText = document.querySelector("#text");
 let root = document.querySelector("ul");
 
@@ -16,7 +15,7 @@ function handleInput(event) {
         allTodos.push(todo);
         event.target.value = "";
 
-        createUI();
+        createUI(allTodos, root);
     }
 }
     
@@ -24,19 +23,19 @@ function handleInput(event) {
 function handleDelete(event) {
 let id = event.target.dataset.id;
 allTodos.splice(id, 1);
-createUI();
+createUI(allTodos, root);
 }
 
 function handleToggle(event) {
     let id = event.target.dataset.id;
     allTodos[id].isDone = !allTodos[id].isDone;
 
-    createUI(); 
+    createUI(allTodos, root); 
 }
 
-function createUI() {
-    root.innerHTML = "";
-    allTodos.forEach((todo, index) => {
+function createUI(data, rootElm) {
+    rootElm.innerHTML = "";
+    data.forEach((todo, index) => {
         let li = document.createElement("li");
         let input = document.createElement("input");
         input.type = "checkbox";
@@ -59,3 +58,4 @@ function createUI() {
 
 inputText.addEventListener("keyup", handleInput);
 }
+todo();
