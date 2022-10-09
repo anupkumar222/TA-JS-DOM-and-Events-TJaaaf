@@ -71,15 +71,22 @@ let filterdHouse = got.houses.filter(ele => {
 createUI(filterdHouse);
 }
 
+let allPeople = got.houses.reduce((acc, cv) => {
+  acc = acc.concat(cv.people);
+  return acc;
+ }, []);
+
 function searchPeople(event) {
-  console.log(event)
-  let value = event.target.innerText
-let searchPerson = got.houses.filter(ele => {
-  if(ele.name.toLowerCase() === value.toLowerCase()) {
-    return ele;
-   }
-})
-createUI(searchPerson);
+  let value = event.target.value
+  console.log(value)
+let searchPerson = allPeople.filter((p) => p.name.toLowerCase().includes(value.toLowerCase()));
+
+
+let obj = [{
+  people: searchPerson
+}]
+createUI(obj);
+
 }
 
 input.addEventListener("keyup", searchPeople)
