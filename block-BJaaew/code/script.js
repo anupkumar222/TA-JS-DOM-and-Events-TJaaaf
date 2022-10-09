@@ -77,6 +77,7 @@ let allPeople = got.houses.reduce((acc, cv) => {
  }, []);
 
 function searchPeople(event) {
+  
   let value = event.target.value
   console.log(value)
 let searchPerson = allPeople.filter((p) => p.name.toLowerCase().includes(value.toLowerCase()));
