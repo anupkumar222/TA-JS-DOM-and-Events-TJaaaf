@@ -3,10 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Movie Watch List</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <main>
+      <section class="container">
+        <div class="movie-list">
+          <h1>todos</h1>
+          <input
+           type="text"
+           id="text"
+           name="todo"
+           placeholder="What needs to be done?"
+           >
+           <ul>
+             <!-- <li>
+               <input type="checkbox">
+               <span class="movie-name">Forest Gump</span>
+               <button>X</button>
+             </li> -->
+           </ul>
+           <div class="bar">
+           <button>All</button>
+           <button>Active</button>
+           <button>Completed</button>
+           <button>Clear Completed</button>
+           </ul>
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
